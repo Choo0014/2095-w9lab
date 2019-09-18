@@ -5,12 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FIT2095';
-  counter: number = 0;
-  incCounter() {
-    this.counter++;
-  }
-  resetCounter(){
-    this.counter=0;
-  }
+  size = 10;
+  dec() {this.size--;}
+  inc() {this.size++;}
 }

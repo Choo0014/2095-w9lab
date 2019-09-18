@@ -1,9 +1,8 @@
+<div [style.font-size.px]="size">Resizable Text</div>
+<button (click)="inc()">+Font</button>
+<button (click)="dec()">-Font</button>
 <p>
-  Welcome to {{title}}!!
+  The current font size={{size}}
 </p>
-<p>
-  The count is: {{counter}}
-</p>
-<button (click)="incCounter()">Click Me</button>
-<button (click)="resetCounter()">Reset</button>
+
 <router-outlet></router-outlet>
