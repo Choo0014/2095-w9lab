@@ -5,7 +5,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  size = 10;
-  dec() {this.size--;}
-  inc() {this.size++;}
+  data = [];
+  item = "";
+  newItem() {
+    this.data.push(this.item);
+  }
+  clearItems() {
+    this.data = [];
+  }
 }

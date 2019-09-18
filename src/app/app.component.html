@@ -1,8 +1,11 @@
-<div [style.font-size.px]="size">Resizable Text</div>
-<button (click)="inc()">+Font</button>
-<button (click)="dec()">-Font</button>
-<p>
-  The current font size={{size}}
-</p>
+Enter Your Items:
+<input [(ngModel)]="item" />
+<br>
+<button (click)="newItem()">Add Item</button>
+<button (click)="clearItems()">Clear Items</button>
+<br>
+<div *ngIf="data.length>0">You have {{data.length}} items</div>
+<div *ngIf="data.length==5">Caution:  5 items in your array</div>
+<br>
 
 <router-outlet></router-outlet>
