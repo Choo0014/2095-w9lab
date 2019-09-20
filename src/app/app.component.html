@@ -5,7 +5,17 @@ Enter Your Items:
 <button (click)="clearItems()">Clear Items</button>
 <br>
 <div *ngIf="data.length>0">You have {{data.length}} items</div>
-<div *ngIf="data.length==5">Caution:  5 items in your array</div>
+<div *ngIf="data.length==5">Caution: 5 items in your array</div>
 <br>
+<table>
+  <tr>
+    <th> # </th>
+    <th> Item </th>
+  </tr>
+  <tr *ngFor="let item of data; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{item}}</td>
+  </tr>
+</table>
 
 <router-outlet></router-outlet>
