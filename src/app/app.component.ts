@@ -5,12 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data = [];
-  item = "";
-  newItem() {
-    this.data.push(this.item);
-  }
-  clearItems() {
-    this.data = [];
-  }
+  message = "0";
 }
