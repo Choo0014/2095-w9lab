@@ -1,12 +1,15 @@
 import {
-  Component
+  Component,
+  ViewEncapsulation // for html bg color
 } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None // for html bg color
 })
-export class AppComponent {
+export class AppComponent{
+  htmlTitle: string = 'Week 9 Lab';
   data = [];
   bookTitle: string = '';
   date: string = '';
@@ -32,7 +35,14 @@ export class AppComponent {
     this.data.splice(index, 1);
   }
   deleteHardCover() {
-    let x = this.data.length;
+    let i = 0;
+    while (i < this.data.length) {
+      if (this.data[i].bookType === 'Hard Cover') {
+        this.data.splice(i, 1);
+      } else {
+        i++;
+      }
+    }
 
   }
   getHardCoverNo(): number {
