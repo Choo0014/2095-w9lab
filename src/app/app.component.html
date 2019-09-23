@@ -45,14 +45,12 @@
   </tr>
   <tr *ngFor="let item of data; let i = index">
     <td>{{i+1}}</td>
-    <td>{{bookTitle}}</td>
-    <td>{{date}}</td>
-    <td>{{bookType}}</td>
-    <td>{{bookSummary}}</td>
-    <td><button (click)="deleteBook(item.name)" class="btn btn-danger">Delete?</button></td>
+    <td>{{item.bookTitle}}</td>
+    <td>{{item.date}}</td>
+    <td>{{item.bookType}}</td>
+    <td>{{item.bookSummary}}</td>
+    <td><button (click)="deleteBook(i)" class="btn btn-danger">Delete?</button></td>
   </tr>
 </table>
-
-
 
 <router-outlet></router-outlet>

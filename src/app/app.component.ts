@@ -8,25 +8,28 @@ import {
 })
 export class AppComponent {
   data = [];
-  bookTitle = '';
-  date = '';
-  bookType = '';
-  bookSummary = '';
-  numHardCover = 0;
+  bookTitle: string = '';
+  date: string = '';
+  bookType: string = '';
+  bookSummary: string = '';
+  numHardCover: number = 0;
 
   newItem() {
     this.data.push({
       bookTitle: this.bookTitle,
       date: this.date,
       bookType: this.bookType,
-      bookSummary: this.bookSummary,
+      bookSummary: this.bookSummary
     });
     if (this.bookType === 'Hard Cover') {
       this.numHardCover++;
     }
   }
-  deleteBook(x) {
-    this.data.splice(x, 1);
+  deleteBook(index: number) {
+    if (this.data[index].bookType === 'Hard Cover'){
+      this.numHardCover--;
+    }
+    this.data.splice(index, 1);
   }
   deleteHardCover() {
     let x = this.data.length;
