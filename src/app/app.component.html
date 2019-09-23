@@ -27,7 +27,7 @@
 
 
 <button class="btn btn-primary" (click)="newItem()">Add Item</button>
-<button class="btn btn-danger" (click)="deleteHardCover()">Delete Hard Cover {{numHardCover}}</button>
+<button class="btn btn-danger" (click)="deleteHardCover()">Delete Hard Cover {{getHardCoverNo()}}</button>
 <br>
 
 <div *ngIf="data.length>0">You have {{data.length}} items</div>
