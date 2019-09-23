@@ -1,9 +1,58 @@
-Width:
-<input [(ngModel)]="Width" />
+<div class="form-center">
+
+  <div class="form-group col-md-5">
+    <label for="title">Book Title</label>
+    <input class="form-control" [(ngModel)]="bookTitle" id="bookTitle" placeholder="Enter book title" />
+  </div>
+
+  <div class="form-group col-md-5">
+    <label for="date">Publish Date</label>
+    <input type="date" class="form-control" [(ngModel)]="date" id="date" placeholder="Enter the date" />
+  </div>
+
+  <div class="form-group col-md-5">
+    <label for="type">Select Book Type</label>
+    <select class="custom-select mr-sm-2" [(ngModel)]="bookType" id="bookType">
+      <option value="Paper Back">Paper Back</option>
+      <option value="Hard Cover">Hard Cover</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-5">
+    <label for="summary">Book Summary</label>
+    <textarea class="form-control" rows="5" [(ngModel)]="bookSummary" id="bookSummary"></textarea>
+  </div>
+  <br>
+</div>
+
+
+<button class="btn btn-primary" (click)="newItem()">Add Item</button>
+<button class="btn btn-danger" (click)="deleteHardCover()">Delete Hard Cover {{numHardCover}}</button>
 <br>
-Length:
-<input [(ngModel)]="Length" />
+
+<div *ngIf="data.length>0">You have {{data.length}} items</div>
+<div *ngIf="data.length==5">Caution: 5 items in your array</div>
 <br>
-<div>Area of rectengle={{message}}</div>
-<br>
+
+<table class="table table-hover">
+  <tr>
+    <th> # </th>
+    <th> Title </th>
+    <th> Publication Date </th>
+    <th> Type </th>
+    <th> Summary </th>
+    <th> Delete? </th>
+  </tr>
+  <tr *ngFor="let item of data; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{bookTitle}}</td>
+    <td>{{date}}</td>
+    <td>{{bookType}}</td>
+    <td>{{bookSummary}}</td>
+    <td><button (click)="deleteBook(item.name)" class="btn btn-danger">Delete?</button></td>
+  </tr>
+</table>
+
+
+
 <router-outlet></router-outlet>
